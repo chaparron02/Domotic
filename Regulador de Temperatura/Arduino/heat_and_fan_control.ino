@@ -1,3 +1,8 @@
+// info 
+
+// Ambos relés se activan por low trigger, es decir un 0 lógico (LOW) hará ya sea que se encienda el ventilador o el calefactor,
+// y un 1 lógico hará que se apaguen (HIGH)
+
 #include "DHT.h" // lib para mod temp
 #define DHTPIN 5 // pin de comunicacion con el sensor de temperatura
 #define DHTTYPE DHT11 // referencia del sensor
@@ -30,6 +35,7 @@ void loop() {
    
    // relé
    delay(1000);
+   Serial.print("Humedad, Temperatura, Sensacion termica\n");
    Serial.print(humedad);
    Serial.print(",    ");
    Serial.print(temperatura);
