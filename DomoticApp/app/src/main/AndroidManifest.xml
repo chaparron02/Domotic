@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DomoticApp">
-        <activity android:name=".color_picker"></activity>
+        <activity android:name=".smart_regulator"></activity>
+        <activity android:name=".edit_display_text" />
+        <activity android:name=".smart_lock" />
+        <activity android:name=".register" />
         <activity android:name=".smart_light" />
         <activity android:name=".home" />
         <activity android:name=".MainActivity">

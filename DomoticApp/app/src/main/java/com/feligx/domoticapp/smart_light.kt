@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.github.dhaval2404.colorpicker.ColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
+import com.google.android.gms.common.util.CollectionUtils.listOf
 import com.google.firebase.firestore.FirebaseFirestore
 
 class smart_light : AppCompatActivity() {
@@ -34,12 +35,15 @@ class smart_light : AppCompatActivity() {
 
         var current_hexcolor = "#FFFFF"
         var current_color = 0
+        var rgb_color : IntArray
         var panel_is_on = lightSwitch.isChecked()
 
         //Gather info from intent
         val userInfo : Bundle? = intent.extras
         val email : String? = userInfo?.getString("email")
         val pwd : String? = userInfo?.getString("pwd")
+        val usr : String? = userInfo?.getString("username")
+
         if (email != null) {
             db.collection("led_panels").document(email).get().addOnSuccessListener {
                 current_hexcolor= (it.get("hex_color") as String?).toString()
@@ -68,10 +72,15 @@ class smart_light : AppCompatActivity() {
                     // Handle Color Selection
                     current_color = color
                     current_hexcolor = colorHex
+                    rgb_color= getRgbFromHex(current_hexcolor)
                     currentColorSquare.background.setColorFilter(Color.parseColor(current_hexcolor), PorterDuff.Mode.SRC_ATOP)
                     if (email != null) {
-                        db.collection("led_panels").document(email).set(
-                            hashMapOf("is_on" to panel_is_on, "color_number" to current_color, "hex_color" to current_hexcolor)
+                        db.collection("led_panels").document(email).update(
+                            mapOf(
+                                "color_number" to current_color,
+                                "hex_color" to current_hexcolor,
+                                "rgb_color" to listOf("r" to rgb_color[0], "g" to rgb_color[1], "b" to rgb_color[2])
+                            )
                         )
                     }
                 }
@@ -81,20 +90,28 @@ class smart_light : AppCompatActivity() {
         lightSwitch.setOnClickListener {
             panel_is_on = lightSwitch.isChecked()
             if (email != null) {
-                db.collection("led_panels").document(email).set(
-                    hashMapOf("is_on" to panel_is_on, "color_number" to current_color, "hex_color" to current_hexcolor)
+                db.collection("led_panels").document(email).update(
+                    mapOf("is_on" to panel_is_on, "color_number" to current_color, "hex_color" to current_hexcolor)
                 )
             }
         }
 
         checkButton.setOnClickListener {
             if (email != null) {
-                db.collection("led_panels").document(email).set(
-                    hashMapOf("is_on" to panel_is_on, "color_number" to current_color, "hex_color" to current_hexcolor)
+                db.collection("led_panels").document(email).update(
+                    mapOf("is_on" to panel_is_on, "color_number" to current_color, "hex_color" to current_hexcolor)
                 )
             }
             onBackPressed()
         }
+    }
+
+    fun getRgbFromHex(hex: String): IntArray {
+        val initColor = Color.parseColor(hex)
+        val r = Color.red(initColor)
+        val g = Color.green(initColor)
+        val b = Color.blue(initColor)
+        return intArrayOf(r, g, b)
     }
 }
 

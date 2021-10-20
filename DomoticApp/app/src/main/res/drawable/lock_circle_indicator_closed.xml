@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/circle_lock">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <size
+                android:width="250dp"
+                android:height="250dp"/>
+            <stroke android:width="30dp" android:color="#db2323"/>
+            <solid android:color="@color/white"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/ic_closedlock_24"
+        android:width="150dp" android:height="150dp"
+        android:gravity="center"
+        android:id="@+id/lock_icon"/>
+
+</layer-list>
