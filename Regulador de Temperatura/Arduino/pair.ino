@@ -56,9 +56,9 @@ void loop() {
   Serial.print("°C");
   Serial.println();
   
+  Firebase.setFloat(firebaseData, "/regulators/Test/actual_temperature", temp);
+  Firebase.setFloat(firebaseData, "/regulators/Test/Humedad", hum);
+  Firebase.setFloat(firebaseData, "/regulators/Test/Hic", hic);
 
-  Firebase.setFloat(firebaseData, "/ESP32_APP/TEMPERATURE", temp);
-  Firebase.setFloat(firebaseData, "/ESP32_APP/HUMIDITY", hum);
-  Firebase.setFloat(firebaseData, "/ESP32_APP/HIC", hic);
-   delay(200);
+  delay(200);
 }
