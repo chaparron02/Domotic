@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DomoticApp</string>
+    <string name="appname">DomoticApp</string>
+    <string name="o_bien">o bien</string>
+    <string name="registrate">Regístrate</string>
+    <string name="password">Password</string>
+    <string name="logueate">Loguéate</string>
+    <string name="username">Username</string>
+    <string name="email">E-mail</string>
+</resources>

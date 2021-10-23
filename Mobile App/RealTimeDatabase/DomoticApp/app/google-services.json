@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "58726220744",
+    "project_id": "domotic-ur",
+    "storage_bucket": "domotic-ur.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58726220744:android:ad705f89367099af9436fd",
+        "android_client_info": {
+          "package_name": "com.feligx.domoticapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58726220744-70g7873q6e30dkt0qtli3skvfk11tieg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.feligx.domoticapp",
+            "certificate_hash": "b94e803aa2ed9e9c7aea44861bbd9314c269f87d"
+          }
+        },
+        {
+          "client_id": "58726220744-r5kpgaha57ucgotml63qessri86a8rp2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxiv1_oGdPCaWEoOhwcUYn0mfD8cFWLo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58726220744-r5kpgaha57ucgotml63qessri86a8rp2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
