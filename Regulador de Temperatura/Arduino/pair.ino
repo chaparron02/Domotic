@@ -2,10 +2,10 @@
 #include  <WiFi.h>
 #include "DHT.h"
 
-#define FIREBASE_HOST "https://domotic-ur-default-rtdb.firebaseio.com/" 
-#define WIFI_SSID "CityU-WIFI-24G-T3-P10" // Change the name of your WIFI
-#define WIFI_PASSWORD "CityU2018*" // Change the password of your WIFI
-#define FIREBASE_Authorization_key "KdmKXWEvYBhJoYraF0BimJQcT7VEatvcFL93t5sm"
+#define FIREBASE_HOST "https://********.firebaseio.com/" 
+#define WIFI_SSID "***********" // Change the name of your WIFI
+#define WIFI_PASSWORD "*******" // Change the password of your WIFI
+#define FIREBASE_Authorization_key "KdX***************c3t5sm"
 
 #define DHTPIN 2    
 
