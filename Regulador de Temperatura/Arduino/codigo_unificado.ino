@@ -62,6 +62,7 @@ void loop() {
   Serial.print("°C");
   Serial.println();
   
+  // envio de datos a firebase
   Firebase.setFloat(firebaseData, "/regulators/Test/actual_temperature", temp);
   Firebase.setFloat(firebaseData, "/regulators/Test/Humedad", hum);
   Firebase.setFloat(firebaseData, "/regulators/Test/Hic", hic);
