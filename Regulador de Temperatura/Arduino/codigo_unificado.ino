@@ -1,6 +1,6 @@
 //Actualizacion
 /*
- * Ahora el calefactor se activa con HIGH
+ * Ahora el calefactor es activado por una señal de tipo high - trigger
 */
 
 #include <FirebaseESP32.h>
@@ -65,10 +65,12 @@ void loop() {
   Firebase.setFloat(firebaseData, "/regulators/Test/actual_temperature", temp);
   Firebase.setFloat(firebaseData, "/regulators/Test/Humedad", hum);
   Firebase.setFloat(firebaseData, "/regulators/Test/Hic", hic);
-
+  
+  // variables donde se almacenaran los datos recopilados de firebase
   int lower_l;
   int upper_l;
   
+  // recopilacion de datos de firebase
   if(Firebase.getInt(firebaseData,"/regulators/Test/lower_limit")){
     lower_l = firebaseData.intData();
   }
